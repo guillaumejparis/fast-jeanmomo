@@ -1,0 +1,11 @@
+{
+  "name": "fast-jeanmomo",
+  "packageManager": "yarn@4.12.0",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite dev"
+  },
+  "devDependencies": {
+    "vite": "npm:rolldown-vite@7.3.1"
+  }
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jean Momo</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <style>
+        /* ========== LIGHT THEME COLORS ========== */
+        :root {
+            /* Primary accent color */
+            --primary: #d500f9;
+            --primary-hover: #aa00c7;
+
+            /* Background colors */
+            --bg: #fafafa;
+            --surface: #ffffff;
+
+            /* Text colors */
+            --text: #1c1b1f;
+            --text-secondary: #49454f;
+
+            /* Effects */
+            --shadow: rgba(0, 0, 0, 0.15);
+            --btn-hover-overlay: 12%;
+
+            /* Button specific */
+            --btn-radius: 20px;
+            --btn-padding: 12px 24px;
+            --btn-font-size: 14px;
+
+            /* Logo */
+            --logo-size: 128px;
+            --logo-radius: 32px;
+
+            /* Spacing */
+            --gap: 16px;
+            --container-padding: 24px;
+        }
+
+        /* ========== DARK THEME COLORS ========== */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                /* Primary accent color */
+                --primary: #e879f9;
+                --primary-hover: #f0abfc;
+
+                /* Background colors */
+                --bg: #1c1b1f;
+                --surface: #2b2930;
+
+                /* Text colors */
+                --text: #e6e1e5;
+                --text-secondary: #cac4d0;
+
+                /* Effects */
+                --shadow: rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--gap);
+            padding: var(--container-padding);
+        }
+
+        .logo {
+            width: var(--logo-size);
+            height: var(--logo-size);
+            border-radius: var(--logo-radius);
+            object-fit: cover;
+            margin-bottom: 32px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--gap);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--btn-padding);
+            border: none;
+            border-radius: var(--btn-radius);
+            font-size: var(--btn-font-size);
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-elevated {
+            background-color: var(--surface);
+            color: var(--primary);
+            box-shadow: 0 1px 3px var(--shadow), 0 1px 2px var(--shadow);
+        }
+
+        .btn-elevated:hover {
+            box-shadow: 0 4px 8px var(--shadow), 0 2px 4px var(--shadow);
+            background-color: var(--surface);
+        }
+
+        .btn-text {
+            background-color: transparent;
+            color: var(--primary);
+        }
+
+        .btn-text:hover {
+            background-color: color-mix(in srgb, var(--primary) var(--btn-hover-overlay), transparent);
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <img src="/icon-192.png" alt="Jean Momo" class="logo">
+
+        <div class="row">
+            <a href="https://bw.jeanmomo.ovh/" target="_blank" rel="noopener" class="btn btn-elevated">Bitwarden</a>
+            <a href="https://nextcloud.jeanmomo.ovh/" target="_blank" rel="noopener"
+                class="btn btn-elevated">Nextcloud</a>
+        </div>
+
+        <div class="row">
+            <a href="https://ha.jeanmomo.ovh/" target="_blank" rel="noopener" class="btn btn-elevated">Home
+                Assistant</a>
+        </div>
+
+        <div class="row">
+            <a href="https://radarr.jeanmomo.ovh/" target="_blank" rel="noopener" class="btn btn-elevated">Radarr</a>
+            <a href="https://sonarr.jeanmomo.ovh/" target="_blank" rel="noopener" class="btn btn-elevated">Sonarr</a>
+            <a href="https://prowlarr.jeanmomo.ovh/" target="_blank" rel="noopener"
+                class="btn btn-elevated">Prowlarr</a>
+        </div>
+
+        <div class="row">
+            <a href="https://jellyfin.jeanmomo.ovh/" target="_blank" rel="noopener"
+                class="btn btn-elevated">Jellyfin</a>
+        </div>
+
+        <div class="row">
+            <a href="https://sabnzbd.jeanmomo.ovh/" target="_blank" rel="noopener" class="btn btn-elevated">SABnzbd</a>
+            <a href="https://qbittorrent.jeanmomo.ovh/" target="_blank" rel="noopener"
+                class="btn btn-elevated">qBittorrent</a>
+        </div>
+
+        <div class="row">
+            <a href="https://beszel.jeanmomo.ovh/" target="_blank" rel="noopener" class="btn btn-text">Beszel</a>
+            <a href="https://guillaumejparis.github.io/recipes/" target="_blank" rel="noopener"
+                class="btn btn-text">Basilic</a>
+            <a href="https://authentik.jeanmomo.ovh/" target="_blank" rel="noopener" class="btn btn-text">Authentik</a>
+            <a href="https://psacc.jeanmomo.ovh/" target="_blank" rel="noopener" class="btn btn-text">Psacc</a>
+        </div>
+    </main>
+</body>
+
+</html>
