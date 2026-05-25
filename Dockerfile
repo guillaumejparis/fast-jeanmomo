@@ -1,16 +1,20 @@
 # Build stage
-FROM node:lts-alpine AS builder
+FROM node:22-alpine AS builder
 
 WORKDIR /app
 
 # Enable corepack for yarn
-RUN corepack enable
+RUN npm install -g corepack && corepack enable
 
-# Copy package files
-COPY . .
+# Copy dependency files first (cached layer)
+COPY package.json yarn.lock .yarnrc.yml ./
+COPY .yarn/ .yarn/
 
-# Install dependencies
+# Install dependencies (cached unless lockfile changes)
 RUN yarn install --immutable
+
+# Copy source files
+COPY . .
 
 # Build the application
 RUN yarn build
